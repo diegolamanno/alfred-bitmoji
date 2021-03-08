@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.diegolamanno.alfred-bitmoji</string>
+	<string>com.diegolamanno.alfredbitmoji</string>
 	<key>category</key>
 	<string>Internet</string>
 	<key>connections</key>
@@ -138,7 +138,7 @@
 	<key>createdby</key>
 	<string>Diego La Manno</string>
 	<key>description</key>
-	<string>Get your bitmoji directly from Alfred</string>
+	<string>Get your Bitmoji comic directly from Alfred</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -464,7 +464,10 @@ fi</string>
 	<key>readme</key>
 	<string>This worflow allows you to use a the Bitmoji API directly from Alfred.
 
-It uses the templates provided by Bitmoji in a similar way how the Chrome extension works.</string>
+It uses the templates provided by Bitmoji in a similar way how the Chrome extension works.
+
+Disclaimer: 
+- You might need to run `yarn install` from the workflow folder to install dependencies. Still trying to figure that out</string>
 	<key>uidata</key>
 	<dict>
 		<key>0CB90253-3388-4F93-AF38-1D6AD9A19DCE</key>
@@ -588,6 +591,8 @@ It uses the templates provided by Bitmoji in a similar way how the Chrome extens
 		<key>bitmoji-api</key>
 		<string>https://api.bitmoji.com/content/templates</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>1.0</string>
 	<key>webaddress</key>
