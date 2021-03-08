@@ -1,0 +1,26 @@
+{
+  "name": "alfred-bitmoji",
+  "version": "0.0.0",
+  "description": "Access your bitmoji in alfred",
+  "main": "index.js",
+  "repository": "https://test.com",
+  "author": "Diego La Manno",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
+  "dependencies": {
+    "alfy": "^0.10.0",
+    "axios": "^0.21.1",
+    "axios-cache-adapter": "^2.7.3",
+    "dotenv": "^8.2.0",
+    "image-cache": "^1.0.1",
+    "libmoji": "^2.3.0",
+    "urijs": "^1.19.6",
+  }
+}
