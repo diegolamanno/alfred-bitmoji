@@ -1,5 +1,5 @@
 # Alfred Bitmoji
 
-![bitmoji]('./icon.png)
+![bitmoji](./icon.png)
 
 TBD..
