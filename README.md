@@ -4,7 +4,7 @@
 
 > [Alfred](https://www.alfredapp.com) workflow to interact with Bitmoji and get comics URLs
 
-<img src="screenshot.png" width="895" height="404">
+<img src="screenshot.png">
 
 *Requires [Node.js](https://nodejs.org) 8+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
 
