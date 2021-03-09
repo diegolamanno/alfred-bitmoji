@@ -326,48 +326,6 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>bitmoji-update</string>
-				<key>subtext</key>
-				<string>Update bitmoji templates DB</string>
-				<key>text</key>
-				<string>Bitmoji update</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>E80D2B6F-0027-4683-95DB-A16876CC9E58</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Templates DB updated</string>
-				<key>title</key>
-				<string>Bitmoji</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>FBFB6C7A-7FAE-4978-823F-BA313E5A4A46</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
 				<string>bitmoji-setup</string>
@@ -414,29 +372,6 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>curl https://api.bitmoji.com/content/templates &gt; ./node_modules/libmoji/build/json/templates.json</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>BE6AD824-AF4A-4740-A25C-21CF62158C24</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
 				<string>query=$1
 
 FILE=.env
@@ -457,6 +392,71 @@ fi</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>F9A192BF-A8FB-4EB3-AED9-CEE68577604B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>bitmoji-update</string>
+				<key>subtext</key>
+				<string>Update bitmoji templates DB</string>
+				<key>text</key>
+				<string>Bitmoji update</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E80D2B6F-0027-4683-95DB-A16876CC9E58</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Templates DB updated</string>
+				<key>title</key>
+				<string>Bitmoji</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>FBFB6C7A-7FAE-4978-823F-BA313E5A4A46</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>curl https://api.bitmoji.com/content/templates &gt; ./node_modules/libmoji/build/json/templates.json</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BE6AD824-AF4A-4740-A25C-21CF62158C24</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -502,9 +502,9 @@ Disclaimer:
 		<key>BE6AD824-AF4A-4740-A25C-21CF62158C24</key>
 		<dict>
 			<key>xpos</key>
-			<integer>920</integer>
+			<integer>325</integer>
 			<key>ypos</key>
-			<integer>580</integer>
+			<integer>745</integer>
 		</dict>
 		<key>C0C149A9-8419-4415-90D1-38951EDE54C6</key>
 		<dict>
@@ -542,9 +542,9 @@ Disclaimer:
 			<key>note</key>
 			<string>Updates json dump from bitmojis templates API</string>
 			<key>xpos</key>
-			<integer>720</integer>
+			<integer>125</integer>
 			<key>ypos</key>
-			<integer>580</integer>
+			<integer>745</integer>
 		</dict>
 		<key>E937AA2C-FC46-4078-8A4D-363B819997DC</key>
 		<dict>
@@ -581,9 +581,9 @@ Disclaimer:
 		<key>FBFB6C7A-7FAE-4978-823F-BA313E5A4A46</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1095</integer>
+			<integer>500</integer>
 			<key>ypos</key>
-			<integer>580</integer>
+			<integer>745</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -594,7 +594,7 @@ Disclaimer:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
 	<string>https://www.diegolamanno.com</string>
 </dict>
