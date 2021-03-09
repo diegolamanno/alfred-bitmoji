@@ -1,17 +1,16 @@
 const alfy = require('alfy')
 const libmoji = require('libmoji')
 const URI = require('urijs')
-const imageCache = require('image-cache')
 const fs = require('fs')
 const axios = require('axios')
 const dotenv = require('dotenv')
-const uuid = require('uuid')
 const { setupCache } = require('axios-cache-adapter')
+const randomWords = require('random-words')
 
 require('./config')
 
 const USER_ID = process.env.USER_ID
-
+const CACHE_TIME = 2592000000 // 30 days
 const IMAGE_FOLDER = '.tmp'
 
 // Create `axios-cache-adapter` instance
@@ -49,8 +48,14 @@ const downloadImage = async (url, imagePath) => {
 
 const findTemplates = (tag) => {
   const searchTerm = tag
+  if (alfy.cache.get(tag)) {
+    return alfy.cache.get(tag)
+  }
   const comicTemplates = libmoji.templates
   const templatesFound = comicTemplates.filter((template) => template.tags.includes(searchTerm))
+  if (templatesFound !== 0) {
+    alfy.cache.set(tag, templatesFound, { maxAge: CACHE_TIME })
+  }
   return templatesFound
 }
 
@@ -75,7 +80,7 @@ const formatComic = (comic) => {
 
   const output = {
     uid: comic.template_id,
-    title: comic.supertags[0],
+    title: randomWords({ exactly: 3, join: ' ' }),
     arg: formattedUri,
     quicklookurl: formattedUri,
     autocomplete: comic.supertags[0],
@@ -84,14 +89,30 @@ const formatComic = (comic) => {
   return output
 }
 
+const SEARCH = [
+  {
+    uid: `on-site-${alfy.input}`,
+    title: 'Searching on Bitmoji...',
+  },
+]
+
+const EMPTY = [
+  {
+    title: '¯\\_(ツ)_/¯',
+    subtitle: `Sorry: no comics found for "${alfy.input}".`,
+  },
+]
+
 ;(async () => {
   try {
-    const comicId = libmoji.getComicId(libmoji.randTemplate(libmoji.templates))
-    const comicUri = formatURI(libmoji.buildCpanelUrl(comicId, USER_ID, 0, 2))
     const templatesFound = findTemplates(alfy.input)
-    const formattedTemplatesFound = templatesFound.map(formatComic)
-    alfy.output(formattedTemplatesFound)
+    if (templatesFound.length === 0) {
+      alfy.output(SEARCH)
+    } else {
+      const formattedTemplatesFound = templatesFound.map(formatComic)
+      alfy.output(formattedTemplatesFound)
+    }
   } catch (error) {
-    console.log(error)
+    alfy.output(EMPTY)
   }
 })()
