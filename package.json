@@ -1,6 +1,6 @@
 {
   "name": "alfred-bitmoji",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get your Bitmoji comic directly from Alfred",
   "main": "index.js",
   "repository": "https://github.com/diegolamanno/alfred-bitmoji",
