@@ -1,0 +1,38 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+
+jobs:
+  update_core4_metrics:
+    docker:
+      - image: alpine/git
+    steps:
+      - checkout
+      - run:
+          name: Install curl/bash
+          command: apk add --no-cache bash curl
+      - run:
+          name: Updating Deployment Frequency
+          command: bash .circleci/test.sh
+  prettier:
+    docker:
+      - image: circleci/node:12.13-stretch-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: yarn prettier:check
+
+workflows:
+  build_and_test:
+    jobs:
+      - update_core4_metrics
+      - prettier:
+          requires:
+            - update_core4_metrics
+  
